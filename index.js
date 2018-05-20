@@ -36,7 +36,7 @@
 'use strict';
 
 module.exports = {
-  constructor: {'@@type': require('./package.json').name + '/Useless@1'},
+  constructor: {'@@type': (require ('./package.json')).name + '/Useless@1'},
   inspect: function() { return 'Useless'; }
 };
 

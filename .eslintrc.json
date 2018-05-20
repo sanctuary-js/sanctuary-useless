@@ -4,29 +4,14 @@
   "overrides": [
     {
       "files": ["*.md"],
-      "plugins": ["markdown"],
-      "env": {"es6": true, "node": true},
       "globals": {"Identity": false, "Useless": false, "Z": false, "eq": false},
       "rules": {
-        "func-call-spacing": ["error", "always", {"allowNewlines": true}],
-        "no-unused-vars": ["error", {"varsIgnorePattern": "^Useless$"}],
-        "strict": ["off"]
+        "no-unused-vars": ["error", {"varsIgnorePattern": "^Useless$"}]
       }
     },
     {
       "files": ["index.js"],
       "env": {"node": true}
-    },
-    {
-      "files": ["test/**/*.js"],
-      "rules": {
-        "comma-dangle": ["error", "always-multiline"],
-        "func-call-spacing": ["error", "always", {"allowNewlines": true}],
-        "func-style": ["error", "declaration", {"allowArrowFunctions": true}],
-        "indent": ["off"],
-        "no-unexpected-multiline": ["off"],
-        "no-var": ["error"]
-      }
     }
   ]
 }
