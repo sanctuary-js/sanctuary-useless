@@ -17,8 +17,8 @@
   "devDependencies": {
     "sanctuary-scripts": "3.2.x",
     "sanctuary-show": "1.0.x",
-    "sanctuary-type-classes": "11.0.0",
-    "sanctuary-type-identifiers": "2.0.x"
+    "sanctuary-type-classes": "sanctuary-js/sanctuary-type-classes#ab304ba600be47da8eb28f0380cc40463f0ca82d",
+    "sanctuary-type-identifiers": "sanctuary-js/sanctuary-type-identifiers#c947f9f916bae64ba5efffe46c34922131302e3d"
   },
   "scripts": {
     "doctest": "sanctuary-doctest",
