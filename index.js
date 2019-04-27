@@ -37,23 +37,37 @@
 
   'use strict';
 
+  var util = {inspect: {}};
+
   /* istanbul ignore else */
   if (typeof module === 'object' && typeof module.exports === 'object') {
-    module.exports = f ();
+    module.exports = f (require ('util'));
   } else if (typeof define === 'function' && define.amd != null) {
-    define ([], f);
+    define ([], function() { return f (util); });
   } else {
-    self.sanctuaryUseless = f ();
+    self.sanctuaryUseless = f (util);
   }
 
-} (function() {
+} (function(util) {
 
   'use strict';
 
-  return {
-    constructor: {'@@type': 'sanctuary-useless/Useless@1'},
-    inspect: function() { return 'Useless'; }
-  };
+  var Useless = {};
+
+  Useless.constructor = {'@@type': 'sanctuary-useless/Useless@1'};
+
+  function inspect() {
+    return 'Useless';
+  }
+  var custom = util.inspect.custom;
+  /* istanbul ignore else */
+  if (typeof custom === 'symbol') {
+    Useless[custom] = inspect;
+  } else {
+    Useless.inspect = inspect;
+  }
+
+  return Useless;
 
 }));
 

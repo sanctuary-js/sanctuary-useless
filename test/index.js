@@ -1,6 +1,7 @@
 'use strict';
 
 const assert        = require ('assert');
+const util          = require ('util');
 
 const show          = require ('sanctuary-show');
 const Z             = require ('sanctuary-type-classes');
@@ -26,7 +27,7 @@ test ('Useless', () => {
      ({namespace: 'sanctuary-useless', name: 'Useless', version: 1});
 
   eq (String (Useless)) ('[object Object]');
-  eq (Useless.inspect ()) ('Useless');
+  eq (util.inspect (Useless)) ('Useless');
 
   eq (Z.Setoid.test (Useless)) (false);
   eq (Z.Ord.test (Useless)) (false);
