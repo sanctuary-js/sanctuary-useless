@@ -33,12 +33,29 @@
 //. eq (Z.Functor.test (Identity (Useless))) (true);
 //. ```
 
-'use strict';
+(function(f) {
 
-module.exports = {
-  constructor: {'@@type': (require ('./package.json')).name + '/Useless@1'},
-  inspect: function() { return 'Useless'; }
-};
+  'use strict';
+
+  /* istanbul ignore else */
+  if (typeof module === 'object' && typeof module.exports === 'object') {
+    module.exports = f ();
+  } else if (typeof define === 'function' && define.amd != null) {
+    define ([], f);
+  } else {
+    self.sanctuaryUseless = f ();
+  }
+
+} (function() {
+
+  'use strict';
+
+  return {
+    constructor: {'@@type': 'sanctuary-useless/Useless@1'},
+    inspect: function() { return 'Useless'; }
+  };
+
+}));
 
 //. [`Z.Setoid`]:       v:sanctuary-js/sanctuary-type-classes#Setoid
 //. [type classes]:     v:sanctuary-js/sanctuary-type-classes
