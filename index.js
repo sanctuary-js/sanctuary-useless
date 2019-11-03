@@ -54,7 +54,7 @@
 
   var Useless = {};
 
-  Useless.constructor = {'@@type': 'sanctuary-useless/Useless@1'};
+  Useless['@@type'] = 'sanctuary-useless/Useless@1';
 
   function inspect() {
     return 'Useless';
