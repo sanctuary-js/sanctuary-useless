@@ -33,5 +33,5 @@ where applicable:
 eq (Z.Functor.test (Identity (Useless))) (true);
 ```
 
-[`Z.Setoid`]:       https://github.com/sanctuary-js/sanctuary-type-classes/tree/v12.0.0#Setoid
-[type classes]:     https://github.com/sanctuary-js/sanctuary-type-classes/tree/v12.0.0
+[`Z.Setoid`]:       https://github.com/sanctuary-js/sanctuary-type-classes/tree/v12.1.0#Setoid
+[type classes]:     https://github.com/sanctuary-js/sanctuary-type-classes/tree/v12.1.0
