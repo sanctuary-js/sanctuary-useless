@@ -56,15 +56,10 @@
 
   Useless['@@type'] = 'sanctuary-useless/Useless@1';
 
-  function inspect() {
-    return 'Useless';
-  }
-  var custom = util.inspect.custom;
+  var custom = util.inspect.custom;  // added in Node.js v6.6.0
   /* istanbul ignore else */
   if (typeof custom === 'symbol') {
-    Useless[custom] = inspect;
-  } else {
-    Useless.inspect = inspect;
+    Useless[custom] = function() { return 'Useless'; };
   }
 
   return Useless;
