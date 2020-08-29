@@ -13,6 +13,9 @@
     "/index.js",
     "/package.json"
   ],
+  "engines": {
+    "node": ">=6.6.0"
+  },
   "dependencies": {},
   "devDependencies": {
     "sanctuary-scripts": "4.0.x",
