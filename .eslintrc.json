@@ -8,6 +8,10 @@
       "rules": {
         "no-unused-vars": ["error", {"varsIgnorePattern": "^Useless$"}]
       }
+    },
+    {
+      "files": ["index.js"],
+      "globals": {"Deno": false}
     }
   ]
 }
