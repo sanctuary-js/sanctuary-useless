@@ -60,6 +60,12 @@
     const {custom} = util.inspect;  // added in Node.js v6.6.0
     /* istanbul ignore else */
     if (typeof custom === 'symbol') Useless[custom] = () => 'Useless';
+    /* istanbul ignore if */
+    if (typeof Deno !== 'undefined') {
+      if (Deno != null && typeof Deno.customInspect === 'symbol') {
+        Useless[Deno.customInspect] = () => 'Useless';
+      }
+    }
   }
 
   return Useless;
