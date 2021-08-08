@@ -18,7 +18,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "sanctuary-scripts": "4.0.x",
+    "sanctuary-scripts": "5.0.x",
     "sanctuary-show": "2.0.x",
     "sanctuary-type-classes": "12.1.0",
     "sanctuary-type-identifiers": "3.0.x"
@@ -28,5 +28,8 @@
     "lint": "sanctuary-lint",
     "release": "sanctuary-release",
     "test": "npm run lint && sanctuary-test && npm run doctest"
+  },
+  "mocha": {
+    "ui": "tdd"
   }
 }
