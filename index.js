@@ -37,18 +37,16 @@
 
   'use strict';
 
-  const util = {inspect: {}};
-
   /* istanbul ignore else */
   if (typeof module === 'object' && typeof module.exports === 'object') {
-    module.exports = f (require ('util'));
+    module.exports = f ();
   } else if (typeof define === 'function' && define.amd != null) {
-    define ([], () => f (util));
+    define ([], f);
   } else {
-    self.sanctuaryUseless = f (util);
+    self.sanctuaryUseless = f ();
   }
 
-}) (util => {
+}) (() => {
 
   'use strict';
 
@@ -56,15 +54,21 @@
 
   Useless['@@type'] = 'sanctuary-useless/Useless@1';
 
-  {
-    const {custom} = util.inspect;  // added in Node.js v6.6.0
-    /* istanbul ignore else */
-    if (typeof custom === 'symbol') Useless[custom] = () => 'Useless';
-    /* istanbul ignore if */
-    if (typeof Deno !== 'undefined') {
-      if (Deno != null && typeof Deno.customInspect === 'symbol') {
-        Useless[Deno.customInspect] = () => 'Useless';
-      }
+  /* istanbul ignore else */
+  if (
+    typeof process !== 'undefined' &&
+    process != null &&
+    process.versions != null &&
+    process.versions.node != null
+  ) {
+    Useless[
+      Symbol.for ('nodejs.util.inspect.custom')  // added in Node.js v10.12.0
+    ] = () => 'Useless';
+  }
+  /* istanbul ignore if */
+  if (typeof Deno !== 'undefined') {
+    if (Deno != null && typeof Deno.customInspect === 'symbol') {
+      Useless[Deno.customInspect] = () => 'Useless';
     }
   }
 
