@@ -4,14 +4,14 @@
   "overrides": [
     {
       "files": ["*.md"],
-      "globals": {"Identity": false, "Useless": false, "Z": false, "eq": false},
+      "globals": {"Identity": "readonly", "Useless": "readonly", "Z": "readonly", "eq": "readonly"},
       "rules": {
         "no-unused-vars": ["error", {"varsIgnorePattern": "^Useless$"}]
       }
     },
     {
       "files": ["index.js"],
-      "globals": {"Deno": false, "process": false}
+      "globals": {"Deno": "readonly", "process": "readonly"}
     }
   ]
 }
