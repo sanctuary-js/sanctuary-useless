@@ -1,13 +1,11 @@
-'use strict';
+import assert       from 'assert';
+import util         from 'util';
 
-const assert        = require ('assert');
-const util          = require ('util');
+import show         from 'sanctuary-show';
+import Z            from 'sanctuary-type-classes';
+import type         from 'sanctuary-type-identifiers';
 
-const show          = require ('sanctuary-show');
-const Z             = require ('sanctuary-type-classes');
-const type          = require ('sanctuary-type-identifiers');
-
-const Useless       = require ('..');
+import Useless      from '../index.js';
 
 
 //    eq :: a -> b -> Undefined !
