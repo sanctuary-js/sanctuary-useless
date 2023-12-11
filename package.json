@@ -18,7 +18,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "sanctuary-scripts": "5.0.x",
+    "sanctuary-scripts": "6.0.x",
     "sanctuary-show": "3.0.x",
     "sanctuary-type-classes": "13.0.0",
     "sanctuary-type-identifiers": "4.0.x"
