@@ -5,7 +5,7 @@ import test from 'oletus';
 import Z from 'sanctuary-type-classes';
 import type from 'sanctuary-type-identifiers';
 
-import Useless from '../index.js';
+import {Useless} from '../index.js';
 
 
 test ('Useless', () => {
