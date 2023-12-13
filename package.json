@@ -7,6 +7,11 @@
     "type": "git",
     "url": "git://github.com/sanctuary-js/sanctuary-useless.git"
   },
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
   "files": [
     "/LICENSE",
     "/README.md",
@@ -14,10 +19,11 @@
     "/package.json"
   ],
   "engines": {
-    "node": ">=10.12.0"
+    "node": ">=16.0.0"
   },
   "dependencies": {},
   "devDependencies": {
+    "sanctuary-identity": "2.1.x",
     "sanctuary-scripts": "7.0.x",
     "sanctuary-type-classes": "13.0.0",
     "sanctuary-type-identifiers": "4.0.x"
