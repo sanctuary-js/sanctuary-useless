@@ -1,6 +1,7 @@
 import assert       from 'assert';
 import util         from 'util';
 
+import test         from 'oletus';
 import show         from 'sanctuary-show';
 import Z            from 'sanctuary-type-classes';
 import type         from 'sanctuary-type-identifiers';
